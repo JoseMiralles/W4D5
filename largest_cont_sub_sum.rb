@@ -1,4 +1,4 @@
-LIST = [-5, -1, -3]
+LIST = [5, 3, -7]
 
 
 
@@ -40,7 +40,8 @@ def linear(arr)
             largest = current
         elsif current < 0 
             current = 0
-        elsif largest < arr[i]
+        end
+        if largest < arr[i]
             largest = arr[i]
         end    
         i += 1
