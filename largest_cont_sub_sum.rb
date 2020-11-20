@@ -26,7 +26,7 @@ end
 
 #  [5, 3, -7]
 #  [2, 3, -6, 7, -6, 7]
-# [-5, -1, -3]
+#  [-5, -1, -3]
 
 def linear(arr)
     largest = arr.first
@@ -45,8 +45,14 @@ def linear(arr)
         end    
         i += 1
     end
+    p i
     largest
 end
 
-p linear(LIST)
+p linear([5, 3, -7])
+p linear([2, 3, -6, 7, -6, 7])
+p linear([-5, -1, -3])
+
+rand = (-500000..500000).to_a.shuffle
+p linear(rand)
 
