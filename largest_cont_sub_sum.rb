@@ -1,5 +1,29 @@
 LIST = [-5, -1, -3]
 
+
+def liniarithmic(arr)
+    subs = []
+
+    arr.each_with_index do |ele1, idx1|
+        subs << [ele1]
+        arr[idx1..-1].each_with_index do |ele2, idx2|
+            subs << arr[idx1..idx2]
+        end
+    end
+
+    biggest = subs.first.sum
+    subs[1..-1].each do |sub|
+        if sub.sum > biggest
+            biggest= sub.sum
+        end
+    end
+    p subs
+    biggest
+    
+end
+p liniarithmic(LIST)
+
+
 # def lcss(arr)
 #     subs = []
     
@@ -17,4 +41,3 @@ LIST = [-5, -1, -3]
 #     end
 #     sub_sum
 # end
-p lcss(LIST)
