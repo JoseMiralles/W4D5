@@ -3,7 +3,7 @@ LIST = [5, 3, -7]
 
 
 
-def liniarithmic(arr)
+def linearithmic(arr)
     subs = []
 
     arr.each_with_index do |ele1, idx1|
@@ -18,7 +18,6 @@ def liniarithmic(arr)
             biggest= sub.sum
         end
     end
-    p subs
     biggest
     
 end
