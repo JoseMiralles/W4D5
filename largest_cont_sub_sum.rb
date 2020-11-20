@@ -1,4 +1,4 @@
-LIST = [5, 3, -7]
+LIST = [2, 3, -6, 7, -6, 7]
 
 
 def linearithmic(arr)
