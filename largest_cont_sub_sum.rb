@@ -1,12 +1,14 @@
 LIST = [2, 3, -6, 7, -6, 7]
 
 
+
+
 def linearithmic(arr)
     subs = []
 
     arr.each_with_index do |ele1, idx1|
         arr[0..idx1].each_with_index do |ele2, idx2|
-            subs << arr[idx2..idx1]
+                subs << arr[idx2..idx1] #.slice(idx2..idx1)
         end
     end
 
@@ -19,23 +21,32 @@ def linearithmic(arr)
     biggest
     
 end
-linearithmic(LIST)
+# p liniarithmic(LIST)
 
+
+#  [5, 3, -7]
+#  [2, 3, -6, 7, -6, 7]
+# [-5, -1, -3]
 
 def linear(arr)
-    subs = []
-    
-    sum = arr.first
-    i = 0
+    largest = arr.first
+    current = arr.first
+
+    i = 1
     while i < arr.length
-        temp_sum = arr[i..-1].sum 
-        sum = temp_sum if i < arr.length - 1 && sum < temp_sum
-        temp_sum = arr[i]
-        sum = temp_sum if sum < temp_sum
-        temp_sum = arr[0..i].sum
-        sum = temp_sum if i >= 1 &&  sum < temp_sum
+        current = current += arr[i]
+        if largest < current
+            largest = current
+        elsif current < 0 
+            current = 0
+        end
+        if largest < arr[i]
+            largest = arr[i]
+        end    
         i += 1
     end
-    sum
+    largest
 end
+
 p linear(LIST)
+
