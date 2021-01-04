@@ -9,11 +9,11 @@ end
 
 
 
-def second_anagram?(str1, str2)
+def second_anagram?(str1, str2) #quadratic
 
-    split = str2.split("")
-    str1.split("").each do |c|
-        split.delete(c)
+    split = str2.split("") #O(n)
+    str1.split("").each do |c| #O(n)    <
+        split.delete(c) #O(n)           ^ O(n^2) when nested in above each block
     end
 
     split.empty?
